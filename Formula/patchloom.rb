@@ -1,25 +1,25 @@
 class Patchloom < Formula
   desc "A Rust CLI for agent-grade repo operations"
   homepage "https://github.com/patchloom/patchloom"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/v0.1.0/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "113d9bb8d19bf6e4a18e3effdbfd6bd4267acda15dfaedd95aebd2407d75af49"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.1/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "8c3dd7e8458b87d161b7dbb1936c0eea8fad96ee32cf9c009b371312a137d019"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/v0.1.0/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "d170110805766fda7008233a2441e6db9f7cf09ce4b4fe018a19aec4b815c69c"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.1/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "c410abd5ccc07cd577f615fa8bafe40af2b545033d68a4c2988117666437d7ae"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/v0.1.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "18839b131d250b0adc91591bb8a97e68539bc4c5fe8f300e5aff9fe0c004c451"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.1/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "853e3b668d8faa49c1bf85c3cf2b28aa5a1812a1c7ffcebe174d6f244996a9ad"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/v0.1.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9035a51125f918475621d07400cc0979d3305806110ffbc9da20c387ea80fee3"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.1/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "80dc62b5f4ed3e26661a3b6108779e3f6db79529c48a74b8f07ee438bb480701"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
