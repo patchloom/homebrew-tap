@@ -1,36 +1,36 @@
 class Patchloom < Formula
   desc "A Rust CLI for agent-grade repo operations"
   homepage "https://github.com/patchloom/patchloom"
-  version "0.1.2"
+  version "0.1.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.2/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "d7a3e38dd5ec22966b4d7fec17a0fc4fc43de2efef2e7e0939a0678c4d4c949b"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "b8b340c63bd451c250a574e38e286992d52ac6f49461f1ffc0911fb969ca799f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.2/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "f8d8fcab5d8ee58cb5d708bcf8e2f49a20b67e505c2b4cab2112fd724bcbef30"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "c229a0102cef5c02e36747077573666c40f7d47af55b54dd706ec3a2c6350cf9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.2/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "80fd868bbc9cc226e7825789fd294288651b2f2a395b50ae1dc8ffbf90717e79"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "73294d8ca993348a6d51a5c4c026987a06a6f78de7d728b8b2d3d0d6e88bbcb9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.2/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e0a323e3a39716d792a03135ecd81d223e75323176eb032d1a8893c21cf84751"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b8d40109bcd48bc759f3a53f3d1e3a80091ee8ab866ec295d53d87c6466a9d30"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,18 +48,10 @@ class Patchloom < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "patchloom"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "patchloom"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "patchloom"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "patchloom"
-    end
+    bin.install "patchloom" if OS.mac? && Hardware::CPU.arm?
+    bin.install "patchloom" if OS.mac? && Hardware::CPU.intel?
+    bin.install "patchloom" if OS.linux? && Hardware::CPU.arm?
+    bin.install "patchloom" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
