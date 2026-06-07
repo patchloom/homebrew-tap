@@ -1,25 +1,25 @@
 class Patchloom < Formula
   desc "A Rust CLI for agent-grade repo operations"
   homepage "https://github.com/patchloom/patchloom"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "b8b340c63bd451c250a574e38e286992d52ac6f49461f1ffc0911fb969ca799f"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.4/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "448d002f35b349287185195decc795d532efbcbce73a5a8030cd12f61d0418cf"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "c229a0102cef5c02e36747077573666c40f7d47af55b54dd706ec3a2c6350cf9"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.4/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "8904a3ea45f2351a0efc1cb044e027c52d327d399d8a6a6d918f741825f4b412"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "73294d8ca993348a6d51a5c4c026987a06a6f78de7d728b8b2d3d0d6e88bbcb9"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.4/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "769efe6d12805232626ee8d1c7278c42751bb07496d676d4d748d62748872511"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.3/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b8d40109bcd48bc759f3a53f3d1e3a80091ee8ab866ec295d53d87c6466a9d30"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.4/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7bd57f1a3be1936e5188e3fe19321dde8db1cd8598f72859ae54823cacd122a3"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
