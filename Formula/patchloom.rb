@@ -1,25 +1,25 @@
 class Patchloom < Formula
   desc "A Rust CLI for agent-grade repo operations"
-  homepage "https://github.com/patchloom/patchloom"
-  version "0.1.6"
+  homepage "https://patchloom.github.io/patchloom/"
+  version "0.1.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.6/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "bd8c2a7600e3490ee2a7c568405d38903d294ea2ba5e49ecfc550efd8edf046d"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.7/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "bb3e6327e2a27c44c6dcc616b18764ce47399636e8c3e371c4f10cda73ac78e7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.6/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "7dab90b22cb3cceb4b71ee5b25cec894e7d9d12eb1e0667bbbbcb722b75cad22"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.7/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "3a838d1eef6680c2e55283975bab6e14c62dcad57217e615140fc6b0400c9a79"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.6/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3e5a2b32cd8a385f00d5ec1ba9ef4bba0d149b9596701e86a7ea22e84a977cd3"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.7/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c144dcc7f708bdc9819ac915c75454bfd5f4db28b563ef3383e05deec220e0e2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.6/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c977ba3ca1c87fdbb59b20a1d7929377692e02c4fe50b36265aa8b5e5a217813"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.1.7/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "550de3d7d84cadb76f2cbcf5336f94f7979f3019ee6d2a9c05645bdefcc64937"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
