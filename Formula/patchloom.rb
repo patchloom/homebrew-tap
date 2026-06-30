@@ -1,35 +1,40 @@
 class Patchloom < Formula
-  desc "Structured file editing library and CLI for AI agents: parser-backed JSON/YAML/TOML edits, AST-aware code operations via tree-sitter, multi-file batching, markdown operations, and MCP server"
+  desc "Structured file editing library and CLI for AI agents: parser-backed JSON/YAML/TOML edits, AST-aware code operations, multi-file batching, markdown operations, and MCP server"
   homepage "https://patchloom.github.io/patchloom/"
-  version "0.6.0"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.6.0/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "6d2b8608c022a7d62ced7278b408f311ec762ddba554e023af78b4a973bd5c35"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.7.0/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "82f8f407d1b2bcdb59df68aa25334c4b15b338c498e97c1fae0f024fccbc5854"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.6.0/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "57050707a43ed62c3b02b94cd16d16130ce5cb41d2327d2c7270292248a7f53d"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.7.0/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "23dedcc3ea6b4a5b08ca16ec621e1b014462e41eb77b26a3458086d22c8bcc7f"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.6.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "98c031f90aea384b1566040796d6ef9f7307c70da60a1490506439883e83912f"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.7.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7ae354f8885783fb068d8ffb6df23a8716c0a78ed5ed7f9ab7d643874f3c6ef7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.6.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "906161d4495a39f95a863d7029506c344fa196d0fde58b69af3ab151b19eb26a"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.7.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "1becce936a362ed0d534edfe5c1bf5b0a532d3ab54dbab5111d627a392b62219"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":      {},
-    "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
-    "x86_64-unknown-linux-gnu":  {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-pc-windows-gnu":             {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
