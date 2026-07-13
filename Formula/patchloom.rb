@@ -1,25 +1,25 @@
 class Patchloom < Formula
   desc "Structured file editing library and CLI for AI agents: parser-backed JSON/YAML/TOML edits, AST-aware code operations, multi-file batching, markdown operations, and MCP server"
   homepage "https://patchloom.github.io/patchloom/"
-  version "0.12.0"
+  version "0.13.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.12.0/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "d6f08c9dc5021ba51de51f966ca5966918174af7f4a1c02de06ba5d297489685"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.13.0/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "6c22483e041005a6775702dbd148eb98282ab15760e3ba571d82386d7b3d08b1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.12.0/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "25d86334cafdfc42b3ce997ec088eabd0ed739bfcafab02e25edb8d3a5e9a39b"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.13.0/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "dd6f67359401980be2c9caa9b0609edfc793c295be0ce458da2ffe6240be8427"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.12.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3d4284a93fa34cc62d86dccf4883050cb23ea430738eaa8152181f6bb335186b"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.13.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "42f1d64b11d06876ce8c87aff7e7e03e5239731bc413ed78c94f2a1e88cbfecb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.12.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9618ad3a135b346881bef2525033a3e9c67666c0a570a3cc63422368158229b3"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.13.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2cbd13fe38e1390830611cbf5377859a2de630f095673c25c292c513e7a979f3"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
