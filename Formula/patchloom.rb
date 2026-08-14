@@ -1,25 +1,25 @@
 class Patchloom < Formula
   desc "Structured file editing library and CLI for AI agents: parser-backed JSON/YAML/TOML edits, AST-aware code operations, multi-file batching, markdown operations, and MCP server"
   homepage "https://patchloom.github.io/patchloom/"
-  version "0.28.0"
+  version "0.28.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.0/patchloom-aarch64-apple-darwin.tar.xz"
-      sha256 "154a5af067b5ea4e9ecdcbffddafa3db420a495963ab072a189cf7146850eaff"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.1/patchloom-aarch64-apple-darwin.tar.xz"
+      sha256 "32a802d85091b14acb7fec77e29e216f6dda6d1f301fccb5bca5cb0e1737e5a0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.0/patchloom-x86_64-apple-darwin.tar.xz"
-      sha256 "e506c58c7e1614a98f29c9e643c894f98e626fa97bca8ef66daa76be40edac85"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.1/patchloom-x86_64-apple-darwin.tar.xz"
+      sha256 "8fa3bf0540e00aa60fc073256703593455fc25797be94411b54d67e217f17fae"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.0/patchloom-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ecab096129691c7fc584e08b81963db870459b54ab194e6f8bdd09739e8fa768"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.1/patchloom-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "579f318e16705f161d72b3170531e2912b924b64a3e9920590e94dc7a46bd90c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.0/patchloom-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "856df5953bd26eb51ea5fbd45815b1ededf34ab9c1930310998d220bc8eb982b"
+      url "https://github.com/patchloom/patchloom/releases/download/patchloom-v0.28.1/patchloom-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "7b4458f39e050fdc159a591b03f7da6cd9e0f332ff0fccaf4cd4bf13802f1fee"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -53,10 +53,18 @@ class Patchloom < Formula
   end
 
   def install
-    bin.install "patchloom" if OS.mac? && Hardware::CPU.arm?
-    bin.install "patchloom" if OS.mac? && Hardware::CPU.intel?
-    bin.install "patchloom" if OS.linux? && Hardware::CPU.arm?
-    bin.install "patchloom" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "patchloom"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "patchloom"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "patchloom"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "patchloom"
+    end
 
     install_binary_aliases!
 
